@@ -68,28 +68,4 @@ async function TransactionTest(otherPublicKey: string, amount: number): Promise<
     }
 }
 
-async function main() {
-    const command = process.argv[2];
-    const publicKey = process.argv[3];
-    const amount = process.argv[4];
-
-    switch (command) {
-        case 'new':
-            await createWallet();
-            break;
-        case 'airdrop':
-            await airdrop(publicKey ? parseInt(publicKey) : 1);
-            break;
-        case 'balance':
-            await getBalance();
-            break;
-        case 'transfer':
-            await TransactionTest(publicKey, parseFloat(amount));
-            break;
-        default:
-            console.log('Invalid command');
-            break;
-    }
-}
-
-main();
+export { createWallet, airdrop, getBalance, TransactionTest };
