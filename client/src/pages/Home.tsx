@@ -1,5 +1,5 @@
 import { useState, useRef, MutableRefObject } from "react"
-import { getBalance, TransactionTest, airdrop, createWallet } from "../wallet"
+import { getBalance, TransactionTest, airdrop, createWallet } from "../../../wallet"
 import { Card } from "../components/card"
 export const Home = () => {
     const [state, setState] = useState<string>("")
